@@ -19,10 +19,12 @@ function UploadForm() {
 	};
 
 	return (
-		<form>
-			<label>
+		<form id='upload-img'>
+			<label className='btn-floating btn-large red'>
 				<input type='file' name='' id='' onChange={changeHandler} />
-				<span>+</span>
+				<span className='large material-icons' id='add-icon'>
+					add
+				</span>
 			</label>
 
 			<div className='output'>

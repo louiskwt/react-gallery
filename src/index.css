@@ -5,42 +5,22 @@
 	--secondary: #4e4e4e;
 	--error: #ff4a4a;
 }
-
-/* base styles & title */
 body {
 	font-family: 'Noto Serif';
 	color: var(--secondary);
 }
-.App {
-	max-width: 960px;
-	margin: 0 auto;
-}
-.title h1 {
-	color: var(--primary);
-	font-size: 1.2rem;
-	letter-spacing: 2px;
-	font-weight: normal;
-}
-.title h2,
-.title p {
-	text-align: center;
-}
-.title h2 {
-	margin-top: 60px;
-	font-size: 2.6rem;
-}
 
 /* upload form styles */
-form {
+#upload-img {
 	margin: 30px auto 10px;
 	text-align: center;
 }
-label input {
+#upload-img input {
 	height: 0;
 	width: 0;
 	opacity: 0;
 }
-label {
+#upload-img label {
 	display: block;
 	width: 30px;
 	height: 30px;
@@ -52,7 +32,7 @@ label {
 	font-weight: bold;
 	font-size: 24px;
 }
-label:hover {
+#upload-img label:hover {
 	background: var(--primary);
 	color: white;
 }
@@ -63,6 +43,15 @@ label:hover {
 .error {
 	color: var(--error);
 }
+
+/* .btn-large {
+	line-height: 65px !important;
+}
+
+#add-icon {
+	cursor: pointer !important;
+	line-height: 0 !important;
+} */
 
 /* progress bar styles */
 .progress-bar {

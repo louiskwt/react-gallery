@@ -1,35 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import ImageGrid from './comps/ImageGrid';
-import Title from './comps/Title';
+import Navbar from './comps/Navbar';
 import UploadForm from './comps/UploadForm';
-import Modal from './comps/Modal';
+
+import 'materialize-css/dist/css/materialize.min.css';
+import M from 'materialize-css/dist/js/materialize.min.js';
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Login from './comps/Login';
 // import useSignIn from './hooks/useSignIn';
 
 function App() {
-	const [selectedImg, setSelectedImg] = useState(null);
-	const [user, setUser] = useState(null);
-
+	useEffect(() => {
+		// Init Materialise
+		M.AutoInit();
+	});
 	return (
-		<div className='App'>
-			<Title />
-
-			{user === null ? (
-				<div>
-					<h1>Please login to see the hottest picture now</h1>
-				</div>
-			) : (
-				<div>
-					<UploadForm /> <ImageGrid setSelectedImg={setSelectedImg} />
-				</div>
-			)}
-
-			{selectedImg && (
-				<Modal
-					selectedImg={selectedImg}
-					setSelectedImg={setSelectedImg}
-				/>
-			)}
-		</div>
+		<Router>
+			<div className='App'>
+				<Navbar />
+				<Switch>
+					<Route exact path='/'>
+						<UploadForm /> <ImageGrid />
+					</Route>
+				</Switch>
+				<Switch>
+					<Route exact path='/login'>
+						<Login></Login>
+					</Route>
+				</Switch>
+			</div>
+		</Router>
 	);
 }
 
